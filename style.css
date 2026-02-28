@@ -1,0 +1,89 @@
+/* --- RESET BÁSICO --- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+/* --- NAVBAR --- */
+#navbar {
+    background-color: #306998; /* cor Python */
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-link {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* --- SECÇÕES --- */
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#home {
+    background-color: #ffd43b; /* amarelo Python */
+}
+
+#sobre {
+    background-color: #ffffff;
+}
+
+#eventos {
+    background-color: #306998;
+    color: white;
+}
+
+#recursos {
+    background-color: #f0f0f0;
+}
+
+#contacto {
+    background-color: #ffffff;
+}
+
+/* --- BOTÃO --- */
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #306998;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #224466;
+}
+
+/* --- LISTAS --- */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+/* --- RODAPÉ --- */
+#footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
