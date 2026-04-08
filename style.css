@@ -1,4 +1,4 @@
-/* --- RESET BÁSICO --- */
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -6,36 +6,46 @@ body {
     background-color: #f9f9f9;
 }
 
-/* --- NAVBAR --- */
+
 #navbar {
-    background-color: #306998; /* cor Python */
-    padding: 15px;
+    background: linear-gradient(135deg, #29353f 0%, #0c2746 100%); 
+    padding: 20px 15px;
     display: flex;
     justify-content: center;
+    align-items: last center;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid #ffd43b; 
 }
 
 .nav-link {
     color: white;
-    margin: 0 15px;
+    margin: 0 20px;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 25px; 
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .nav-link:hover {
-    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.2); 
+    transform: translateY(-2px); 
+    text-decoration: none;
 }
 
-/* --- SECÇÕES --- */
+
 .section {
     padding: 60px 20px;
     text-align: center;
 }
 
 #home {
-    background-color: #ffd43b; /* amarelo Python */
+    background-color: #ffd43b; 
 }
 
 #sobre {
@@ -55,7 +65,7 @@ body {
     background-color: #ffffff;
 }
 
-/* --- BOTÃO --- */
+
 button {
     padding: 12px 25px;
     font-size: 16px;
@@ -70,7 +80,7 @@ button:hover {
     background-color: #224466;
 }
 
-/* --- LISTAS --- */
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -80,10 +90,13 @@ li {
     margin: 10px 0;
 }
 
-/* --- RODAPÉ --- */
 #footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 20px;
+}
+
+.section {
+    margin: 0;
 }
