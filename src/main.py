@@ -67,13 +67,13 @@ contacto_section <= html.P("Twitter: @PythonMoz")
 contacto_section <= html.P("Discord: discord.gg/pythonmoz")
 document <= contacto_section
 
-# --- RODAPÉ ---
+# ---  parte do rodapé ---
 footer = html.DIV(Id="footer", Class="footer")
 footer.attrs['data-aos'] = 'fade-up'
 footer <= html.P("© 2026 Python Moçambique. Todos os direitos reservados.")
 document <= footer
 
-# --- EVENTOS INTERACTIVOS ---
+
 
 
 def join(ev):
