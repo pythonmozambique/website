@@ -17,7 +17,6 @@ body {
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-bottom: 2px solid #ffd43b; 
 }
 
 .nav-link {
@@ -48,9 +47,7 @@ body {
     justify-content: center;
 }
 
-#home {
-    background-color: #ffd43b; 
-}
+
 
 #sobre {
     background-color: #ffffff;
@@ -60,16 +57,6 @@ body {
     background-color: #306998;
     color: white;
 }
-
-#recursos a{
-    background-color: #f0f0f0;
-    text-decoration: none;
-}
-
-#contacto {
-    background-color: #ffffff;
-}
-
 
 button {
     padding: 12px 25px;
@@ -93,15 +80,4 @@ ul {
 
 li {
     margin: 10px 0;
-}
-
-#footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-.section {
-    margin: 0;
 }

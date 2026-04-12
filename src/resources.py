@@ -6,17 +6,9 @@ def create():
 
     sec <= html.H2("Recursos")
 
-    links = [
-        ("Documentação Python", "https://docs.python.org/3/"),
-        ("PyPI - Pacotes Python", "https://pypi.org/"),
-        ("Tutorial Brython", "https://brython.info/")
-    ]
+    msg = "Por enquanto, não tocaremos."
+    sec <= html.P(msg, Class="placeholder-text")
 
-    lista = html.UL()
-    for nome, url in links:
-        lista <= html.LI(html.A(nome, href=url, target="_blank"))
-
-    sec <= lista
     return sec
 
 

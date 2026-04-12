@@ -4,7 +4,7 @@ def create():
     sec = html.DIV(Id="eventos", Class="section")
     sec.attrs['data-aos'] = 'fade-up'
 
-    sec <= html.H2("Próximos Eventos")
+    sec <= html.H2("Eventos e Colaborações")
 
     eventos = [
         ("PyCon Maputo 2026", "15 de Março, Maputo"),
@@ -18,6 +18,8 @@ def create():
 
     sec <= lista
     return sec
+
+
 
 
 def bind(document):

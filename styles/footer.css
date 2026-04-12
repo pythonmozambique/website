@@ -1,0 +1,48 @@
+footer {
+    background-color: #306998;
+    text-align: center;
+    padding: 20px;
+}
+
+/* footer.css */
+
+.footer-section {
+    background-color: #306998; /* Azul Python */
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 5px solid #ffd43b; /* Amarelo Python para contraste */
+    color: #ffffff;
+}
+
+.footer-content {
+    margin-bottom: 10px;
+}
+
+.footer-text {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    /* Suaviza a cor do texto para não "gritar" tanto quanto o título */
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-links {
+    margin-top: 15px;
+}
+
+.footer-links a {
+    color: #ffd43b; /* Links em Amarelo para destaque */
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-links span {
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0 8px;
+}
