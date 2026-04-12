@@ -10,6 +10,7 @@ def create():
         ("PyCon Maputo 2026", "15 de Março, Maputo"),
         ("Workshop Django", "30 de Abril, Online"),
         ("Hackathon Python", "10 de Junho, Maputo")
+        #("DjangoGirls Maputo", "TBC, Maputo")
     ]
 
     lista = html.UL()
