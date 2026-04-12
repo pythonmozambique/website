@@ -1,5 +1,6 @@
 from browser import html
 
+
 def create():
     sec = html.DIV(Id="eventos", Class="section")
     sec.attrs['data-aos'] = 'fade-up'
@@ -9,18 +10,23 @@ def create():
     eventos = [
         ("PyCon Maputo 2026", "15 de Março, Maputo"),
         ("Workshop Django", "30 de Abril, Online"),
-        ("Hackathon Python", "10 de Junho, Maputo")
-        #("DjangoGirls Maputo", "TBC, Maputo")
+        ("Hackathon Python", "10 de Junho, Maputo"),
+        ("DjangoGirls Maputo", "TBC, Maputo"),
+        ("PyLadies Maputo", "TBC, Online"),
+        ("PyLadies Beira", "TBC, Beira")
     ]
 
-    lista = html.UL()
+    # Container para os cards
+    container = html.DIV(Class="events-container")
     for nome, data in eventos:
-        lista <= html.LI(f"{nome} — {data}")
+        # Cada evento é um card
+        card = html.DIV(Class="event-card")
+        card <= html.H3(nome)
+        card <= html.P(data)
+        container <= card
 
-    sec <= lista
+    sec <= container
     return sec
-
-
 
 
 def bind(document):

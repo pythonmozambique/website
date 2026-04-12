@@ -1,0 +1,45 @@
+
+
+.events-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaço entre cards */
+    justify-content: center; /* Centraliza os cards */
+}
+
+.event-card {
+    flex: 1 1 300px; /* Largura mínima de 300px, cresce para preencher */
+    max-width: 400px; /* Largura máxima para evitar cards muito largos */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #413e3e2d;
+    text-align: center;
+}
+.event-card:hover{
+   border-color: blue;
+}
+
+.event-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+.event-card p {
+    margin: 0;
+    color: #fffafa;
+}
+
+/* Media query para telas pequenas (mobile) */
+@media (max-width: 768px) {
+    .events-container {
+        flex-direction: column; /* Empilha verticalmente */
+        align-items: center;
+    }
+    
+    .event-card {
+        flex: 1 1 100%; /* Ocupa toda a largura */
+        max-width: 100%;
+    }
+}
