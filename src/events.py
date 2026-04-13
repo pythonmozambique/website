@@ -1,33 +1,48 @@
 from browser import html
 
-
 def create():
     sec = html.DIV(Id="eventos", Class="section")
     sec.attrs['data-aos'] = 'fade-up'
 
+    # --- SEÇÃO DE EVENTOS ---
     sec <= html.H2("Eventos e Colaborações")
-
-    eventos = [
-        ("PyCon Maputo 2026", "15 de Março, Maputo"),
-        ("Workshop Django", "30 de Abril, Online"),
-        ("Hackathon Python", "10 de Junho, Maputo"),
-        ("DjangoGirls Maputo", "TBC, Maputo"),
-        ("PyLadies Maputo", "TBC, Online"),
-        ("PyLadies Beira", "TBC, Beira")
+    
+    eventos_lista = [
+        ("PyCon Maputo 2026", "15 de Março, Maputo", "images/pycon.jpg"),
+        ("Hackathon Python", "10 de Junho, Maputo", "images/hackathon.jpg")
     ]
 
-    # Container para os cards
-    container = html.DIV(Class="events-container")
-    for nome, data in eventos:
-        # Cada evento é um card
+    ev_container = html.DIV(Class="events-container")
+    for nome, data, img_url in eventos_lista:
         card = html.DIV(Class="event-card")
+        card <= html.IMG(src=img_url, alt=nome, Class="event-image")        
         card <= html.H3(nome)
         card <= html.P(data)
-        container <= card
+        ev_container <= card
+    
+    sec <= ev_container
 
-    sec <= container
+    # --- SEÇÃO DE COMUNIDADES ---
+    sec <= html.H2("Nossas Comunidades")
+
+    comunidades_lista = [
+        ("Workshop Django", "30 de Abril, Online", "images/django.jpg"),
+        ("DjangoGirls Maputo", "TBC, Maputo", "assets/dg.jpeg"),
+        ("PyLadies Maputo", "TBC, Online", "images/pyladies_maputo.jpg"),
+        ("PyLadies Beira", "TBC, Beira", "images/pyladies_beira.jpg")
+    ]
+
+    com_container = html.DIV(Class="events-container") # Usa a mesma classe para manter o estilo
+    for nome, info, img_url in comunidades_lista:
+        card = html.DIV(Class="event-card")
+        card <= html.IMG(src=img_url, alt=nome, Class="event-image")        
+        card <= html.H3(nome)
+        card <= html.P(info)
+        com_container <= card
+
+    sec <= com_container
+    
     return sec
-
 
 def bind(document):
     pass
