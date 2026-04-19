@@ -1,7 +1,14 @@
 
+:root{
+    --fonte-principal: 'Nunito';
+}
+
+*{
+    font-family: var(--fonte-principal);
+}
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Nunito';
     line-height: 1.6;
     background-color: #f9f9f9;
 }
@@ -25,6 +32,7 @@ body {
     text-decoration: none;
     font-weight: 600;
     font-size: 16px;
+    
     padding: 10px 15px;
     border-radius: 25px; 
     transition: all 0.3s ease;

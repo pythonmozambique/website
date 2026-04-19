@@ -17,16 +17,7 @@ def create():
         "Comunidade de desenvolvedores Python dedicada a promover a linguagem e compartilhar conhecimento.", Class="footer-description")
     container <= about_section
 
-    # kkkk, seccao dos links
-    links_section = html.DIV(Class="footer-section-group")
-    links_section <= html.H3("Links Rápidos", Class="footer-title")
-    quick_links = html.UL(Class="footer-quick-links")
-    quick_links <= html.LI(html.A("Home", href="#"))
-    quick_links <= html.LI(html.A("Sobre Nós", href="#aboutus"))
-    quick_links <= html.LI(html.A("Eventos", href="#events"))
-    quick_links <= html.LI(html.A("Contato", href="#contact"))
-    links_section <= quick_links
-    container <= links_section
+   
 
     
     social_section = html.DIV(Class="footer-section-group")

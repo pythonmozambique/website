@@ -8,7 +8,7 @@ def create():
     content_div <= html.H1("Bem-vindo à Comunidade Python Moçambique")
     content_div <= html.P("Unindo desenvolvedores, entusiastas e inovadores para fortalecer o ecossistema tecnológico em Moçambique.")
     
-    btn = html.BUTTON("Junte-se à Comunidade", id="join-btn")
+    btn = html.A("Junte-se à Comunidade", href="https://chat.whatsapp.com/Lqlzo70Im7B8DzXLWWFKsX", id="join-btn", Class="hero-button")
     content_div <= btn
     
     sec <= content_div
