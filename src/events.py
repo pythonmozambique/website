@@ -9,13 +9,16 @@ def create():
     sec <= html.H2("Eventos e Colaborações")
 
     eventos_lista = [
-        ("PyCon Maputo 2026", "15 de Março, Maputo", "https://th.bing.com/th/id/OIP.yoPeL8kFPnlzxd1UBb6mIgHaG1?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3"),
-        ("Hackathon Python", "10 de Junho, Maputo", "images/hackathon.jpg")
+        ("Humble Data Workshop", "17 de Outubro de 2026 · Universidade Wutivi - UniTiva", "img/humble-data.png", None),
+        ("Django Girls Matola 2026", "07 de Novembro de 2026 · Cidade da Matola", "img/django-girls-matola.jpg", "https://djangogirls.org/en/matola/"),
     ]
 
     ev_container = html.DIV(Class="events-container")
-    for nome, data, img_url in eventos_lista:
-        card = html.DIV(Class="event-card")
+    for nome, data, img_url, link in eventos_lista:
+        if link:
+            card = html.A(href=link, target="_blank", Class="event-card")
+        else:
+            card = html.DIV(Class="event-card")
         card <= html.IMG(src=img_url, alt=nome, Class="event-image")
         card <= html.H3(nome)
         card <= html.P(data)
@@ -27,15 +30,17 @@ def create():
     sec <= html.H2("Nossas Comunidades")
 
     comunidades_lista = [
-        ("Workshop Django", "", "img/dg.jpeg"),
-        ("DjangoGirls Maputo", "", "img/dg.jpeg"),
-        ("PyLadies Maputo", "", "img/plm.jpeg"),
-        ("PyLadies Beira", "", "img/plb.jpeg")
+        ("Django Girls Mozambique", "", "img/dg.jpeg", "https://www.linkedin.com/company/djangogirlsmoz"),
+        ("PyLadies Maputo", "", "img/plm.jpeg", None),
+        ("PyLadies Beira", "", "img/plb.jpeg", None),
     ]
 
     com_container = html.DIV(Class="events-container")
-    for nome, info, img_url in comunidades_lista:
-        card = html.DIV(Class="event-card")
+    for nome, info, img_url, link in comunidades_lista:
+        if link:
+            card = html.A(href=link, target="_blank", Class="event-card")
+        else:
+            card = html.DIV(Class="event-card")
         card <= html.IMG(src=img_url, alt=nome, Class="event-image")
         card <= html.H3(nome)
         card <= html.P(info)

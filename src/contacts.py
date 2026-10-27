@@ -9,11 +9,11 @@ def create():
     sec = html.DIV(Id="contacto", Class="section")
     sec.attrs['data-aos'] = 'fade-up'
 
-    sec <= html.H2("Torna-te um Colaborador")
+    sec <= html.H2("Associe-te")
     sec <= html.P("Tens um projeto, uma ideia ou queres ajudar a comunidade a crescer? Envia-nos uma mensagem!")
 
     form = html.FORM(Class="contact-form")
-    
+
     form <= html.LABEL("Nome:", html_for="name")
     form <= html.INPUT(Type="text", Id="name", Name="name", Placeholder="Teu nome completo", Required=True)
 
@@ -25,12 +25,12 @@ def create():
 
     submit_btn = html.BUTTON("Enviar Mensagem", Type="submit")
     form <= submit_btn
-    
+
     form.bind("submit", send_message)
 
     sec <= form
     info_div = html.DIV(Class="social-info")
-    info_div <= html.P(f"Email directo: info@pythonmozambique.org")
+    info_div <= html.P(f"Email directo: python.community.moz@gmail.com")
     sec <= info_div
 
     return sec

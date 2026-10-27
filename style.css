@@ -18,8 +18,9 @@ body {
     background: linear-gradient(135deg, #29353f 0%, #0c2746 100%); 
     padding: 20px 15px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: last center;
+    align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;

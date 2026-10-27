@@ -2,7 +2,7 @@
 
 .events-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 300px));
     gap: 24px;
     justify-content: center;
     width: min(90%, 1140px);
@@ -15,8 +15,21 @@ img{
     height: auto;
     border-radius: 20px;
 }
+.event-image {
+    width: 240px;
+    height: 340px;
+    object-fit: contain;
+}
+
+a.event-card {
+    text-decoration: none;
+    color: inherit;
+}
+
 .event-card {
     display: grid;
+    width: fit-content;
+    max-width: 300px;
     gap: 16px;
     padding: 24px;
     border: 1px solid rgba(255, 255, 255, 0.15);

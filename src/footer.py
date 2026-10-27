@@ -34,15 +34,15 @@ def create():
     social_section <= social_links
     container <= social_section
 
-    # Seção 4: Boletim Informativo
-    newsletter_section = html.DIV(Class="footer-section-group")
-    newsletter_section <= html.H3("Boletim Informativo", Class="footer-title")
-    newsletter_form = html.DIV(Class="newsletter-form")
-    newsletter_form <= html.INPUT(
-        type="email", placeholder="Seu email", Class="newsletter-input")
-    newsletter_form <= html.BUTTON("Inscrever", Class="newsletter-btn")
-    newsletter_section <= newsletter_form
-    container <= newsletter_section
+    # Seção 4: Boletim Informativo (oculto por agora)
+    # newsletter_section = html.DIV(Class="footer-section-group")
+    # newsletter_section <= html.H3("Boletim Informativo", Class="footer-title")
+    # newsletter_form = html.DIV(Class="newsletter-form")
+    # newsletter_form <= html.INPUT(
+    #     type="email", placeholder="Seu email", Class="newsletter-input")
+    # newsletter_form <= html.BUTTON("Inscrever", Class="newsletter-btn")
+    # newsletter_section <= newsletter_form
+    # container <= newsletter_section
 
     footer <= container
 

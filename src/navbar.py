@@ -8,7 +8,8 @@ def create():
         ("Sobre", "#sobre"),
         ("Eventos", "#eventos"),
         ("Recursos", "#recursos"),
-        ("Contacto", "#contacto")
+        ("Contacto", "#contacto"),
+        ("Conduta", "coc.html")
     ]
 
     for nome, href in links:
