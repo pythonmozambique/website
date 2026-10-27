@@ -12,7 +12,10 @@ def create():
 
     # Seçcao Sobre
     about_section = html.DIV(Class="footer-section-group")
-    about_section <= html.H3("Python Moçambique", Class="footer-title")
+    about_section <= html.IMG(
+        src="img/pythonmozambique-horizontal-logo.png",
+        alt="Python Moçambique",
+        Class="footer-logo")
     about_section <= html.P(
         "Comunidade de desenvolvedores Python dedicada a promover a linguagem e compartilhar conhecimento.", Class="footer-description")
     container <= about_section

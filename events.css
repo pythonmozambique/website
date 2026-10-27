@@ -62,12 +62,27 @@ a.event-card {
 
 @media (max-width: 768px) {
     .events-container {
-        flex-direction: column; 
-        align-items: center;
+        grid-template-columns: minmax(0, 300px);
+        justify-content: center;
     }
-    
+
     .event-card {
-        flex: 1 1 100%; 
+        width: 100%;
         max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .event-image {
+        width: 100%;
+        height: auto;
+        max-height: 340px;
+    }
+
+    .event-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .event-card p {
+        font-size: 1rem;
     }
 }

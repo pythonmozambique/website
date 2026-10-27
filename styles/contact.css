@@ -36,3 +36,12 @@
     font-size: 0.9em;
     color: #666;
 }
+
+@media (max-width: 768px) {
+    .contact-form label,
+    .contact-form input,
+    .contact-form textarea,
+    .social-info {
+        font-size: 16px;
+    }
+}

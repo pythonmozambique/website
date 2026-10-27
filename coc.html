@@ -2,21 +2,33 @@
 <html lang="pt">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Código de Conduta — Python Mozambique Community</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styles/coc.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.12.0/brython.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.12.0/brython_stdlib.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body onload="brython()">
     <div id="navbar" class="navbar">
-      <a href="index.html#home" class="nav-link">Home</a>
-      <a href="index.html#sobre" class="nav-link">Sobre</a>
-      <a href="index.html#eventos" class="nav-link">Eventos</a>
-      <a href="index.html#recursos" class="nav-link">Recursos</a>
-      <a href="index.html#contacto" class="nav-link">Contacto</a>
-      <a href="coc.html" class="nav-link">Conduta</a>
+      <a href="index.html" class="nav-brand">
+        <img src="img/pythonmozambique-logo.png" alt="Python Moçambique" class="nav-logo">
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+      <div id="nav-links" class="nav-links">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="index.html#sobre" class="nav-link">Sobre</a>
+        <a href="index.html#eventos" class="nav-link">Eventos</a>
+        <a href="index.html#recursos" class="nav-link">Recursos</a>
+        <a href="index.html#contacto" class="nav-link">Contacto</a>
+        <a href="coc.html" class="nav-link">Conduta</a>
+      </div>
     </div>
 
     <article class="coc-page">
@@ -241,5 +253,7 @@
       <p>This document is adapted from the Python Software Foundation Code of Conduct (policies.python.org), which itself incorporates language from several other sources (Geek Feminism wiki, Contributor Covenant, Django Project, Rust, PyCon, and others), listed in the original document.</p>
       <p class="coc-note">Version: July 2026 - Python Mozambique Community</p>
     </article>
+    <script type="text/python" src="src/coc_page.py"></script>
+    <script src="nav.js"></script>
   </body>
 </html>

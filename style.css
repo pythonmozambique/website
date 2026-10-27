@@ -19,7 +19,7 @@ body {
     padding: 20px 15px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
@@ -44,6 +44,52 @@ body {
     background-color: rgba(255, 255, 255, 0.2); 
     transform: translateY(-2px); 
     text-decoration: none;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    line-height: 0;
+}
+
+.nav-logo {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    margin: 0;
+    padding: 10px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 2px;
+    background: #ffffff;
+}
+
+.nav-toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
 }
 
 
@@ -89,4 +135,55 @@ ul {
 
 li {
     margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 88px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    #navbar {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        padding: 8px 16px;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 8px 0 12px;
+        background: linear-gradient(135deg, #29353f 0%, #0c2746 100%);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    #navbar.open .nav-links {
+        display: flex;
+    }
+
+    .nav-link {
+        margin: 0;
+        padding: 14px 20px;
+        font-size: 1.125rem;
+        text-align: center;
+    }
+
+    .section {
+        min-height: auto;
+        justify-content: flex-start;
+        padding: 32px 16px;
+        scroll-margin-top: 80px;
+    }
 }
