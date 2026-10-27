@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Django Girls Marracuene",
+    "date": "2026-08-08",
+    "fullDate": "08 de Agosto de 2026",
+    "location": "UCAM, Marracuene",
+    "image": "img/django-girls-marracuene.jpg",
+    "url": "https://djangogirls.org/en/marracuene/"
+  },
+  {
+    "name": "Django Girls Manjacaze",
+    "date": "2026-08-22",
+    "fullDate": "22 de Agosto de 2026",
+    "location": "Escola Secundária Samora Machel - Manjacaze",
+    "image": "img/django-girls-manjacaze.jpg",
+    "url": "https://djangogirls.org/en/manjacaze/"
+  },
+  {
+    "name": "Django Girls Beira",
+    "date": "2026-09-26",
+    "fullDate": "26 de Setembro de 2026",
+    "location": "Universidade Zambeze",
+    "image": "img/django-girls-beira.jpg",
+    "url": "https://djangogirls.org/en/beira/"
+  },
+  {
+    "name": "Humble Data Workshop",
+    "date": "2026-10-17",
+    "fullDate": "17 de Outubro de 2026",
+    "location": "Universidade Wutivi - UniTiva",
+    "image": "img/humble-data.png",
+    "url": "https://lnkd.in/p/dccnc2ek"
+  },
+  {
+    "name": "Django Girls Matola 2026",
+    "date": "2026-11-07",
+    "fullDate": "07 de Novembro de 2026",
+    "location": "Cidade da Matola",
+    "image": "img/django-girls-matola.jpg",
+    "url": "https://djangogirls.org/en/matola/"
+  }
+]

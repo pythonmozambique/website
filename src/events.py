@@ -1,56 +1,61 @@
-﻿from browser import html
+﻿import json
+from datetime import date
+
+from browser import ajax, html
+
+
+def event_label(event):
+    full_date = event.get("fullDate", "")
+    location = event.get("location", "")
+    if full_date and location:
+        return f"{full_date} · {location}"
+    return full_date or location
+
+
+def make_card(name, label, image, url):
+    if url:
+        card = html.A(href=url, target="_blank", Class="event-card")
+    else:
+        card = html.DIV(Class="event-card")
+    card <= html.IMG(src=image, alt=name, Class="event-image")
+    card <= html.H3(name)
+    card <= html.P(label or "")
+    return card
+
+
+def sort_events(events):
+    today = date.today().isoformat()
+    upcoming = [event for event in events if event["date"] >= today]
+    past = [event for event in events if event["date"] < today]
+    upcoming.sort(key=lambda event: event["date"])
+    past.sort(key=lambda event: event["date"], reverse=True)
+    return upcoming + past
 
 
 def create():
     sec = html.DIV(Id="eventos", Class="section")
-    sec.attrs['data-aos'] = 'fade-up'
+    sec.attrs["data-aos"] = "fade-up"
 
-    # --- SEÇÃO DE EVENTOS ---
     sec <= html.H2("Eventos e Colaborações")
-
-    eventos_lista = [
-        ("Django Girls Matola 2026", "07 de Novembro de 2026 · Cidade da Matola", "img/django-girls-matola.jpg", "https://djangogirls.org/en/matola/"),
-        ("Humble Data Workshop", "17 de Outubro de 2026 · Universidade Wutivi - UniTiva", "img/humble-data.png", None),
-        ("Django Girls Beira", "26 de Setembro de 2026 · Universidade Zambeze", "img/django-girls-beira.jpg", "https://djangogirls.org/en/beira/"),
-        ("Django Girls Manjacaze", "22 de Agosto de 2026 · Manjacaze", "img/django-girls-manjacaze.jpg", "https://djangogirls.org/en/manjacaze/"),
-        ("Django Girls Marracuene", "08 de Agosto de 2026 · UCAM, Marracuene", "img/django-girls-marracuene.jpg", "https://djangogirls.org/en/marracuene/"),
-    ]
-
     ev_container = html.DIV(Class="events-container")
-    for nome, data, img_url, link in eventos_lista:
-        if link:
-            card = html.A(href=link, target="_blank", Class="event-card")
-        else:
-            card = html.DIV(Class="event-card")
-        card <= html.IMG(src=img_url, alt=nome, Class="event-image")
-        card <= html.H3(nome)
-        card <= html.P(data)
-        ev_container <= card
-
     sec <= ev_container
 
-    # --- SEÇÃO DE COMUNIDADES ---
     sec <= html.H2("Nossas Comunidades")
-
-    comunidades_lista = [
-        ("Django Girls Mozambique", "", "img/dg.jpeg", "https://www.linkedin.com/company/djangogirlsmoz"),
-        ("PyLadies Maputo", "", "img/plm.jpeg", None),
-        ("PyLadies Beira", "", "img/plb.jpeg", None),
-    ]
-
     com_container = html.DIV(Class="events-container")
-    for nome, info, img_url, link in comunidades_lista:
-        if link:
-            card = html.A(href=link, target="_blank", Class="event-card")
-        else:
-            card = html.DIV(Class="event-card")
-        card <= html.IMG(src=img_url, alt=nome, Class="event-image")
-        card <= html.H3(nome)
-        card <= html.P(info)
-        com_container <= card
-
     sec <= com_container
 
+    def fill_events(req):
+        for event in sort_events(json.loads(req.text)):
+            ev_container <= make_card(
+                event["name"], event_label(event), event["image"], event.get("url", ""))
+
+    def fill_communities(req):
+        for community in json.loads(req.text):
+            com_container <= make_card(
+                community["name"], "", community["image"], community.get("url", ""))
+
+    ajax.get("data/events.json", oncomplete=fill_events)
+    ajax.get("data/communities.json", oncomplete=fill_communities)
     return sec
 
 

@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Python Mozambique Community",
+    "image": "img/pythonmozambique-logo.png",
+    "url": "https://www.linkedin.com/company/pythonmozambique"
+  },
+  {
+    "name": "Django Girls Mozambique",
+    "image": "img/dg.jpeg",
+    "url": "https://www.linkedin.com/company/djangogirlsmoz"
+  },
+  {
+    "name": "PyLadies Maputo",
+    "image": "img/plm.jpeg",
+    "url": "https://www.linkedin.com/company/pyladies-maputo"
+  },
+  {
+    "name": "PyLadies Beira",
+    "image": "img/plb.jpeg",
+    "url": "https://www.linkedin.com/company/pyladiesbeira"
+  }
+]
