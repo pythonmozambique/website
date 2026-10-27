@@ -9,8 +9,11 @@ def create():
     sec <= html.H2("Eventos e Colaborações")
 
     eventos_lista = [
-        ("Humble Data Workshop", "17 de Outubro de 2026 · Universidade Wutivi - UniTiva", "img/humble-data.png", None),
         ("Django Girls Matola 2026", "07 de Novembro de 2026 · Cidade da Matola", "img/django-girls-matola.jpg", "https://djangogirls.org/en/matola/"),
+        ("Humble Data Workshop", "17 de Outubro de 2026 · Universidade Wutivi - UniTiva", "img/humble-data.png", None),
+        ("Django Girls Beira", "26 de Setembro de 2026 · Universidade Zambeze", "img/django-girls-beira.jpg", "https://djangogirls.org/en/beira/"),
+        ("Django Girls Manjacaze", "22 de Agosto de 2026 · Manjacaze", "img/django-girls-manjacaze.jpg", "https://djangogirls.org/en/manjacaze/"),
+        ("Django Girls Marracuene", "08 de Agosto de 2026 · UCAM, Marracuene", "img/django-girls-marracuene.jpg", "https://djangogirls.org/en/marracuene/"),
     ]
 
     ev_container = html.DIV(Class="events-container")
