@@ -1,9 +1,52 @@
-from browser import html, alert
+import json
+
+from browser import ajax, html, alert
+
+INBOX = "python.community.moz@gmail.com"
+SUBMIT_URL = "/api/contacto"
+
 
 def send_message(ev):
     ev.preventDefault()
-    # to change applyin logic
-    alert("Obrigado pelo interesse! A equipa da Python Mozambique entrará em contacto em breve.")
+    form = ev.target
+    button = form.select_one("button")
+    name = form.select_one("[name=name]").value.strip()
+    email = form.select_one("[name=email]").value.strip()
+    message = form.select_one("[name=message]").value.strip()
+
+    def fail():
+        button.disabled = False
+        button.text = "Enviar Mensagem"
+        alert("Não foi possível enviar a mensagem. Tenta de novo ou escreve para " + INBOX + ".")
+
+    button.disabled = True
+    button.text = "A enviar..."
+    payload = {"name": name, "email": email, "message": message}
+
+    def finished(req):
+        try:
+            body = json.loads(req.text)
+        except Exception:
+            body = {}
+        if req.status == 200 and body.get("ok"):
+            button.disabled = False
+            button.text = "Enviar Mensagem"
+            form.reset()
+            alert("Obrigado pelo interesse! A equipa da Python Mozambique entrará em contacto em breve.")
+            return
+        fail()
+
+    ajax.post(
+        SUBMIT_URL,
+        data=json.dumps(payload),
+        headers={
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+        },
+        timeout=20000,
+        oncomplete=finished,
+        ontimeout=lambda req: fail(),
+    )
 
 def create():
     sec = html.DIV(Id="contacto", Class="section")

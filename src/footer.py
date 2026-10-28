@@ -59,3 +59,7 @@ def create():
     footer <= bottom
 
     return footer
+
+
+def bind(document):
+    pass
