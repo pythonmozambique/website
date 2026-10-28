@@ -1,0 +1,37 @@
+[
+  {
+    "name": "WhatsApp",
+    "url": "https://chat.whatsapp.com/Lqlzo70Im7B8DzXLWWFKsX",
+    "logo": "img/social/whatsapp.svg"
+  },
+  {
+    "name": "GitHub",
+    "url": "https://github.com/pythonmozambique",
+    "logo": "img/social/github.svg"
+  },
+  {
+    "name": "Instagram",
+    "url": "https://www.instagram.com/pythonmozambique",
+    "logo": "img/social/instagram.svg"
+  },
+  {
+    "name": "LinkedIn",
+    "url": "https://www.linkedin.com/company/pythonmozambique",
+    "logo": "img/social/linkedin.svg"
+  },
+  {
+    "name": "Discord",
+    "url": "https://discord.gg/yrmQa8tQ8D",
+    "logo": "img/social/discord.svg"
+  },
+  {
+    "name": "Meetup",
+    "url": "https://www.meetup.com/pythonmozambique/",
+    "logo": "img/social/meetup.svg"
+  },
+  {
+    "name": "Twitter/X",
+    "url": "https://x.com/pythonmoz",
+    "logo": "img/social/x.svg"
+  }
+]

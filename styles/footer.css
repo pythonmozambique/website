@@ -133,10 +133,17 @@
 }
 
 .social-icon {
-    position: relative;
-    z-index: 2;
-    font-size: 0.75rem;
-    font-weight: 700;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    background-color: currentColor;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    mask-mode: alpha;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
 }
 
 
@@ -238,7 +245,6 @@
     }
 
     .footer-description,
-    .social-icon,
     .footer-copyright {
         font-size: 1rem;
     }
@@ -275,10 +281,6 @@
     }
     
     
-    
-    .social-icon {
-        font-size: 1rem;
-    }
     
     .newsletter-input,
     .newsletter-btn {

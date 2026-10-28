@@ -1,5 +1,7 @@
-from browser import html
+import json
 from datetime import datetime
+
+from browser import ajax, html
 
 
 def create():
@@ -11,29 +13,39 @@ def create():
     container = html.DIV(Class="footer-container")
 
     # Seçcao Sobre
-    about_section = html.DIV(Class="footer-section-group")
+    about_section = html.DIV(Class="footer-section-group", Style="position: relative; top: -30px;")
     about_section <= html.IMG(
         src="img/pythonmozambique-horizontal-logo.png",
-        alt="Python Moçambique",
+        alt="Python Mozambique",
         Class="footer-logo")
     about_section <= html.P(
         "Comunidade de desenvolvedores Python dedicada a promover a linguagem e compartilhar conhecimento.", Class="footer-description")
     container <= about_section
 
-   
 
-    
+
+
     social_section = html.DIV(Class="footer-section-group")
     social_section <= html.H3("Conecte-se", Class="footer-title")
     social_links = html.DIV(Class="footer-social-links")
-    social_links <= html.A(html.SPAN("Whatsapp", Class="social-icon"),
-                           href="https://chat.whatsapp.com/Lqlzo70Im7B8DzXLWWFKsX", target="_blank", Class="social-link", title="Whatsapp")
-    social_links <= html.A(html.SPAN("GitHub", Class="social-icon"),
-                           href="https://github.com/pythonmozambique", target="_blank", Class="social-link", title="GitHub")
-    social_links <= html.A(html.SPAN("Instagram", Class="social-icon"),
-                           href="https://www.instagram.com/pythonmozambique", target="_blank", Class="social-link", title="Instagram")
-    social_links <= html.A(html.SPAN("LinkedIn", Class="social-icon"),
-                           href="https://www.linkedin.com/company/pythonmozambique", target="_blank", Class="social-link", title="LinkedIn")
+
+    def fill_social(req):
+        for item in json.loads(req.text):
+            name = item["name"]
+            link = html.A(
+                href=item["url"],
+                target="_blank",
+                Class="social-link",
+                title=name,
+                aria_label=name,
+            )
+            icon = html.SPAN(Class="social-icon", aria_hidden="true")
+            icon.style.maskImage = f"url('{item['logo']}')"
+            icon.style.webkitMaskImage = f"url('{item['logo']}')"
+            link <= icon
+            social_links <= link
+
+    ajax.get("data/social-media.json", oncomplete=fill_social)
     social_section <= social_links
     container <= social_section
 
@@ -55,7 +67,7 @@ def create():
     # Footer Bottom
     bottom = html.DIV(Class="footer-bottom")
     bottom <= html.P(
-        f"© {actual_year} Python Moçambique. Criado com ❤️ pela comunidade.", Class="footer-copyright")
+        f"© {actual_year} Python Mozambique. Criado com ❤️ pela comunidade.", Class="footer-copyright")
     footer <= bottom
 
     return footer
